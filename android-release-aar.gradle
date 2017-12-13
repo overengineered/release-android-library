@@ -4,7 +4,7 @@ apply plugin: 'maven'
 def groupId = project.PUBLISH_GROUP_ID
 def artifactId = project.PUBLISH_ARTIFACT_ID
 def version = project.PUBLISH_VERSION
-def localReleaseDest = project.PUBLISH_OUTPUT ?: "${buildDir}/release/${version}"
+def localReleaseDest = project.findProperty('PUBLISH_OUTPUT') ?: "${buildDir}/release/${version}"
 
 task androidJavadocs(type: Javadoc) {
     failOnError = false
